@@ -1,0 +1,130 @@
+.video-player {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  overflow: hidden;
+}
+
+.video-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  position: relative;
+}
+
+.video-element {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 确保两个video元素完全重叠，使用opacity切换避免重新布局 */
+  /* 两个video元素始终存在，只改变opacity，不改变display */
+  transition: opacity 0.05s ease-in-out;
+  pointer-events: none; /* 避免隐藏的video元素拦截鼠标事件 */
+}
+
+.video-player-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #666;
+  font-size: 16px;
+}
+
+.video-controls {
+  background: #1a1a1a;
+  border-top: 1px solid #3a3a3a;
+  padding: 16px;
+}
+
+.video-info {
+  margin-bottom: 12px;
+}
+
+.video-title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.video-progress-container {
+  width: 100%;
+  height: 6px;
+  background: #3a3a3a;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.video-progress-bar {
+  height: 100%;
+  background: #4a9eff;
+  border-radius: 3px;
+  transition: width 0.1s;
+}
+
+.video-time {
+  color: #888;
+  font-size: 12px;
+}
+
+.video-controls-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn {
+  background: #4a9eff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #3a8eef;
+}
+
+.control-btn:disabled {
+  background: #3a3a3a;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.mode-switch {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.mode-btn {
+  background: #2a2a2a;
+  color: #888;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  background: #323232;
+  color: #fff;
+}
+
+.mode-btn.active {
+  background: #4a9eff;
+  color: #fff;
+}
+

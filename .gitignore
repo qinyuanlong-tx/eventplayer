@@ -1,0 +1,14 @@
+node_modules
+dist
+.vite
+*.log
+.DS_Store
+*.db
+*.db-journal
+videos/
+data/
+release/win-unpacked/
+release/*.exe
+release/*.dmg
+release/*.AppImage
+*.zip

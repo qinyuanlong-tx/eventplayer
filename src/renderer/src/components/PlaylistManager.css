@@ -1,0 +1,164 @@
+.playlist-manager {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-manager-header {
+  padding: 16px;
+  border-bottom: 1px solid #3a3a3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist-manager-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn-create {
+  background: #4a9eff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-create:hover {
+  background: #3a8eef;
+}
+
+.playlist-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.playlist-item {
+  padding: 12px;
+  margin-bottom: 4px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.playlist-item:hover {
+  background: #323232;
+}
+
+.playlist-item.selected {
+  background: #3a5a9f;
+}
+
+.playlist-item-name {
+  flex: 1;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.playlist-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.playlist-item-actions button {
+  background: transparent;
+  color: #888;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.playlist-item-actions button:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.playlist-item-edit {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.playlist-item-edit input {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 300px;
+  border: 1px solid #3a3a3a;
+}
+
+.dialog h3 {
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.dialog input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.dialog-actions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #4a9eff;
+  color: #fff;
+}
+
+.dialog-actions button:last-child {
+  background: #4a4a4a;
+}
+

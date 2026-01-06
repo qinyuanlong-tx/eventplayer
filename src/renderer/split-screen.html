@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分屏播放</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    video {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" autoplay></video>
+  
+  <script>
+    const video = document.getElementById('video');
+    
+    // 从URL参数中获取视频源和显示名称
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoSrc = urlParams.get('src');
+    const displayName = urlParams.get('name');
+    
+    if (displayName) {
+      document.title = '分屏: ' + decodeURIComponent(displayName);
+    }
+    
+    if (videoSrc) {
+      video.src = decodeURIComponent(videoSrc);
+      
+      video.addEventListener('loadedmetadata', () => {
+        console.log('Split screen video loaded');
+      });
+      
+      video.addEventListener('error', (e) => {
+        console.error('Split screen video error:', e);
+      });
+    } else {
+      console.error('No video source provided');
+    }
+  </script>
+</body>
+</html>
+
